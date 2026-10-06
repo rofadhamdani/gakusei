@@ -82,12 +82,12 @@ Semua output tersedia untuk **download** dalam format **Markdown**, **PDF**, dan
    ```bash
    flutter pub get
    ```
-4. **Buat file .env** (gunakan nilai dari Supabase project Anda)
+4. **Buat file `.env`** dari `.env.example` dan gunakan nilai dari Supabase project Anda
    ```text
    SUPABASE_URL=YOUR_SUPABASE_URL
-   SUPABASE_ANON_KEY=YOUR_ANON_KEY
+   SUPABASE_PUBLISHABLE_KEY=YOUR_PUBLISHABLE_KEY
    ```
-   > *File ini sudah ada dalam *.gitignore*.
+   > `.env` dimasukkan ke asset aplikasi Flutter dan dapat dibaca pengguna aplikasi, terutama di Web. Isinya hanya boleh berupa URL dan publishable key Supabase; jangan masukkan `service_role` key atau rahasia lain.
 5. **Inisialisasi Supabase (hanya sekali)**
    ```powershell
    supabase init   # membuat folder supabase/ dan config.toml
